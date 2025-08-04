@@ -1,0 +1,1314 @@
+<!-- creds: hard html > @anugya_mehrotra (https://github.com/anugyamehrotra), css & styling > vercel, hosting vercel | hosting on vercel -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NP Hacks • Sponsorships</title>
+    <link rel="icon" type="hack_club_logo.svg" href="assets/hack_club_logo.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8fafc;
+            background-image: url('./background_website_img.png');
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: 400px 400px;
+            background-position: 0 0;
+            color: #0f172a;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+    
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(255, 99, 146, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(248, 159, 16, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 99, 146, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(248, 250, 252, 0.85);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+      
+        .floating-elements {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.06;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            top: 30%;
+            right: 8%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #F89F10, #FF6392);
+            border-radius: 50%;
+            animation-delay: 3s;
+        }
+
+        .floating-shape:nth-child(3) {
+            bottom: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            border-radius: 20% 80% 80% 20% / 20% 20% 80% 80%;
+            animation-delay: 6s;
+        }
+
+        .floating-shape:nth-child(4) {
+            top: 60%;
+            right: 15%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #F89F10, #FF6392);
+            border-radius: 50%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            33% { transform: translateY(-20px) rotate(120deg) scale(1.1); }
+            66% { transform: translateY(15px) rotate(240deg) scale(0.9); }
+        }
+
+      
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+            position: relative;
+        }
+
+        .header img {
+            height: 2.5rem;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.05);
+        }
+
+        .header nav {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .header a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .header a:hover {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-color: rgba(255, 99, 146, 0.1);
+            transform: translateY(-2px);
+        }
+
+       
+        .hero-section {
+            background: linear-gradient(135deg, rgba(255, 99, 146, 0.1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(248, 159, 16, 0.1) 100%);
+            padding: 6rem 0;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            border-radius: 0 0 3rem 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 99, 146, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 20;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 99, 146, 0.3);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .section-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .hero-title2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-highlight,
+        .hero-highlight2 {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 64rem;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 64rem;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            border-radius: 1.5rem;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        
+        .featured-section {
+            background-color: rgba(248, 250, 252, 0.95);
+            padding: 6rem 0;
+            position: relative;
+            z-index: 15;
+            border-radius: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(1deg);
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            z-index: -1;
+        }
+
+        .featured-main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .featured-laptop {
+            position: relative;
+            transform: rotate(-2deg) translateX(-2rem);
+            transition: transform 0.5s ease;
+            z-index: 10;
+        }
+
+        .featured-laptop:hover {
+            transform: rotate(0deg) translateX(0) scale(1.02);
+        }
+
+        .featured-laptop img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .featured-laptop::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            border-radius: 1.5rem;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .featured-text-content {
+            text-align: left;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(2rem);
+            transition: transform 0.5s ease;
+        }
+
+        .featured-text-content:hover {
+            transform: translateY(0);
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .featured-description {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-highlight {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+       
+        .sponsors-use {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 6rem 0;
+            position: relative;
+            z-index: 15;
+            border-radius: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sponsors-use::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(248, 159, 16, 0.05) 0%, transparent 70%);
+            animation: rotate 25s linear infinite reverse;
+            z-index: -1;
+        }
+
+        .sponsors-use .section-container {
+            text-align: left;
+        }
+
+        .sponsors-use .section-title {
+            font-size: 3.5rem;
+            max-width: 800px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .sponsors-use .section-description {
+            max-width: 600px;
+            margin: 0;
+            margin-bottom: 4rem;
+        }
+
+        .sponsor-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            perspective: 1000px;
+        }
+
+        .sponsor-benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sponsor-benefit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            z-index: -1;
+        }
+
+        .sponsor-benefit-item:nth-child(odd) {
+            transform: rotate(-1deg);
+        }
+
+        .sponsor-benefit-item:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .sponsor-benefit-item:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.02);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(255, 99, 146, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .benefit-text {
+            color: #334155;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .benefit-text strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .our-sponsors {
+            background-color: rgba(248, 250, 252, 0.95);
+            border-radius: 2rem;
+            margin: 2rem 0;
+            padding: 6rem 0;
+            position: relative;
+            z-index: 15;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .our-sponsors::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 99, 146, 0.03) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+            z-index: -1;
+        }
+
+        .sponsor-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            perspective: 1000px;
+        }
+
+        .sponsor-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(15px);
+            aspect-ratio: 1;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sponsor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6392, #F89F10);
+            z-index: 2;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .sponsor-card:nth-child(1) {
+            transform: rotate(-2deg);
+        }
+
+        .sponsor-card:nth-child(2) {
+            transform: rotate(1deg) translateY(1rem);
+        }
+
+        .sponsor-card:nth-child(3) {
+            transform: rotate(-1deg) translateY(0.5rem);
+        }
+
+        .sponsor-card:nth-child(4) {
+            transform: rotate(2deg) translateY(1.5rem);
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-15px) rotate(0deg) scale(1.05);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sponsor-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-card:hover .sponsor-image {
+            transform: scale(1.1);
+        }
+
+
+        .sponsors-contact {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            padding: 6rem 0;
+            position: relative;
+            z-index: 25;
+            transform: skewY(-2deg);
+            margin: 4rem 0;
+            overflow: hidden;
+        }
+
+        .sponsors-contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .sponsors-contact .section-container {
+            transform: skewY(2deg);
+            position: relative;
+            z-index: 10;
+        }
+
+        .sponsors-contact .section-header {
+            text-align: center;
+        }
+
+        .sponsors-contact .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sponsors-contact .section-description {
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .sponsors-link {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .sponsors-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .button_text_calendar_redir {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: #FF6392;
+            font-weight: 700;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button_text_calendar_redir::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 99, 146, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .button_text_calendar_redir:hover::before {
+            left: 100%;
+        }
+
+        .button_text_calendar_redir:hover {
+            background-color: #f8fafc;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+ 
+        .footer {
+            background-color: rgba(15, 23, 42, 0.95);
+            color: white;
+            position: relative;
+            backdrop-filter: blur(15px);
+            z-index: 30;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 99, 146, 0.05), rgba(248, 159, 16, 0.05));
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .footer-section p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: left;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 99, 146, 0.3);
+        }
+
+        .social-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom a {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+ 
+        @media (max-width: 768px) {
+            body {
+                background-size: 300px 300px;
+            }
+
+            .floating-shape {
+                display: none;
+            }
+
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .header nav {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-title2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-section,
+            .featured-section,
+            .sponsors-use,
+            .our-sponsors {
+                transform: none;
+                margin-top: 0;
+            }
+
+            .sponsors-contact {
+                transform: none;
+            }
+
+            .sponsors-contact .section-container {
+                transform: none;
+            }
+
+            .featured-main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .featured-laptop {
+                transform: none;
+                order: -1;
+            }
+
+            .featured-text-content {
+                transform: none;
+                text-align: center;
+            }
+
+            .featured-title {
+                font-size: 1.5rem;
+            }
+
+            .sponsors-use .section-title {
+                font-size: 2.5rem;
+            }
+
+            .sponsor-benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsor-benefit-item {
+                transform: none !important;
+            }
+
+            .sponsor-card-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .sponsor-card {
+                transform: none !important;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .social-media {
+                gap: 0.75rem;
+                justify-content: center;
+            }
+
+            .social-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            .social-icon svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-size: 250px 250px;
+            }
+
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-title2 {
+                font-size: 1.25rem;
+            }
+
+            .featured-title {
+                font-size: 1.25rem;
+            }
+
+            .sponsors-use .section-title {
+                font-size: 2rem;
+            }
+        }
+
+   
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FF6392, #F89F10);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #e5537a, #e6900e);
+        }
+
+      
+        button:focus,
+        a:focus,
+        details:focus {
+            outline: 2px solid #FF6392;
+            outline-offset: 2px;
+        }
+
+
+        * {
+            transition-property: transform, opacity, box-shadow, background-color, color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+  
+        @media (prefers-reduced-motion: reduce) {
+            .floating-shape {
+                animation: none;
+            }
+
+            .hero-section::before,
+            .sponsors-use::before,
+            .our-sponsors::before {
+                animation: none;
+            }
+
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-elements">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+
+
+    <header class="header">
+        <div class="header-container">
+            <div>
+                <img src="assets/hack_club_logo.svg" alt="NP Hacks Logo" onclick="location.href=' index.html'" class="logo">
+            </div>
+            <nav>
+                <a href="about_us.html">About Us</a>
+                <a href="sponsor_page.html">Sponsorships</a>
+                <a href="events_page.html">Events</a>
+                <a href="mailto:team@nphack.club">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="hero-section section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">The Motive</span>
+                <h1 class="hero-title">
+                    Why <span class="hero-highlight">we love</span> doing it.
+                </h1>
+                <p class="section-description">
+                    At NP Hacks, we don't want to just host lessons or classes, we want to help develop strong, talented highschool coders who can take on any coding challenge. Our club for highschool students is a place where you can <strong>learn, grow, and innovate</strong>. We believe that by providing a platform for students to explore their passion for coding, we can help them discover their potential and prepare them for a future in technology.
+                </p>
+                <br>
+                <h2 class="hero-title2">
+                    <strong><span class="hero-highlight2">This is why we need your help.</span></strong>
+                </h2>
+            </div>
+            <div class="hero-image">
+                <img src="assets/north_park_sponsor_banner.png" alt="North Park Sponsor Banner">
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="featured-section">
+        <div class="section-container">
+            <div class="featured-main-content">
+              
+                    <img src="assets/np_sponsor_laptop.png" alt="Laptop showing coding environment" width="600" class="featured-laptop">
+              
+                <div class="featured-text-content">
+                    <h1 class="featured-title">
+                        Coding Is <span class="featured-highlight">Fun</span>, But Not Alone
+                    </h1>
+                    <p class="featured-description">
+                        We are in the middle of a digital revolution. Technology is the fastest-growing industry in Canada, with hundreds of thousands of unfilled jobs and employers desperate for talent.
+                    </p>
+                    <p class="featured-description">
+                        While tech companies are expanding rapidly in cities, education in technical literacy elsewhere has lagged significantly, and many of these classes fail to truly excite students about technology.
+                    </p>
+                    <p class="featured-description">
+                        Students are talented and motivated, but the ability to explore technology locally is next to none. The only way to revitalize our city with technical literacy is to provide avenues to expose students to programming—starting with <strong>NP Hacks</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="sponsors-use section">
+        <div class="section-container">
+            <h1 class="section-title">This is where your help comes in; to help fund NP Hacks.</h1>
+            <p class="section-description">
+                Since day one, we have been committed to helping students fall in love with coding through fun and engaging experiences outside of lessons. With your support and assistance, we can make a big change together!
+            </p>
+            
+          
+            <div class="sponsor-benefits-grid">
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 26C9.373 28 4 22.627 4 16S9.373 4 16 4s12 5.373 12 12-5.373 12-12 12z"/>
+                            <path d="M16 8c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 14c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"/>
+                            <circle cx="16" cy="16" r="3"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Fund hackathon prizes</strong> and give students real incentives to build amazing projects. (You can sponsor our projects too & we can showcase your product(s) or services!!)
+                    </p>
+                </div>
+                
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M28 6H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h24c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM4 8h24v4H4V8zm0 16v-10h24v10H4z"/>
+                            <rect x="6" y="16" width="4" height="2"/>
+                            <rect x="12" y="16" width="8" height="2"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Provide workshop equipment</strong> like laptops, hardware kits, and development tools for hands-on learning.
+                    </p>
+                </div>
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm6 20H10v-2h12v2zm2-4H8v-2h16v2zm0-4H8v-2h16v2z"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Cover venue costs</strong> for our events, ensuring we have professional spaces for learning and collaboration.
+                    </p>
+                </div>
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M16 2l-4 8H4l6.5 6.5L8 26l8-4.5L24 26l-2.5-9.5L28 10h-8l-4-8z"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Fund future student scholarships</strong> and coding opportunities for our most dedicated members.
+                    </p>
+                </div>
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 26C9.373 28 4 22.627 4 16S9.373 4 16 4s12 5.373 12 12-5.373 12-12 12z"/>
+                            <path d="M16 8c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 14c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Support mentorship programs</strong> connecting students with industry professionals for career guidance.
+                    </p>
+                </div>
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm8 14c0 4.411-3.589 8-8 8s-8-3.589-8-8 3.589-8 8-8 8 3.589 8 8z"/>
+                            <path d="M16 6v10l6 6"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Enable regular events</strong> by covering operational costs like food, materials, and transportation.
+                    </p>
+                </div>
+                <div class="sponsor-benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32">
+                            <path d="M16 2l4 8h8l-6.5 6.5L24 26l-8-4.5L8 26l2.5-9.5L4 10h8l4-8z"/>
+                        </svg>
+                    </div>
+                    <p class="benefit-text">
+                        <strong>Get brand visibility</strong> at all our events (projects & hackathons) on our website, socials, and more, reaching hundreds of tech-interested students.
+                    </p>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+
+    <section class="our-sponsors section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Our Community</span>
+                <h2 class="section-title">Our Sponsors</h2>
+            </div>
+            <div class="sponsor-card-container">
+                <div class="sponsor-card">
+                    <img src="assets/sponsorship_card_hsbc_1.png" alt="HSBC Sponsor" class="sponsor-image">
+                </div>
+                <div class="sponsor-card">
+                    <img src="assets/sponsorship_card_BOA_2.png" alt="Bank of America Sponsor" class="sponsor-image">
+                </div>
+                <div class="sponsor-card">
+                    <img src="assets/sponsorship_card_google_3.png" alt="Google Sponsor" class="sponsor-image">
+                </div>
+                <div class="sponsor-card">
+                    <img src="assets/sponsorship_card_HC_4.png" alt="Hack Club Sponsor" class="sponsor-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="sponsors-contact section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Sponsors</h2>
+                <p class="section-description">
+                    Interested in supporting NPHacks 2025 & joining our community? Reach out to our email at
+                    <a href="mailto:team@nphack.club" class="sponsors-link">team@nphack.club</a>, or check out our sponsorship package here <a href="sponsorship-package.html" class="sponsors-link">Sponsorship Package</a>.
+                    <br><br>
+                    (P.S. If you want to sponsor specific events, check out our event schedule to see what we have planned!) <br><br>
+                    <a class="button_text_calendar_redir" href="https://butternut-barber-a26.notion.site/NP-Hacks-Calendar-24173103b8fc809b9a77e2f13425b511" target="_blank" rel="noopener noreferrer">
+                        📅 View Full NP Hacks Calendar
+                        <span>↗</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NP Hacks</h3>
+                    <p>
+                        We are committed to giving you the best possible coding experience. Join us to discover your joy for
+                        programming and learn the key important concepts to succeed.<br><br>
+                        Contact: team@nphack.club
+                    </p>
+             
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/npss.hackclub/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/NPHackClub" target="_blank" rel="noopener noreferrer" class="social-icon github" aria-label="Follow us on GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:team@nphack.club" class="social-icon gmail" aria-label="Email us">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.273L12 10.91l10.091-7.09h.273c.904 0 1.636.732 1.636 1.636z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="events_page.html">Events</a></li>
+                        <li><a href="sponsors.html">Sponsorships</a></li>
+                        <li><a href="mailto:team@nphack.club">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="sponsorship-package.html">Sponsorship Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc1e6OhMRigiYAK6FSwPdBJyM2Tr0GX-erHq1rzDfYtoQNNQw/viewform">Apply Now</a></li>
+                        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@nphack.club&su=NP%20Hacks%20-%20Partnership:%20&body=&bcc=">Partner With Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    Made with ❤️ by North Park Hack Club. Inspired by
+                    <a href="https://hackclub.com" target="_blank">Hack Club</a>.
+                </p>
+                <p>© 2025 NP Hacks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- creds: hard html > @anugya_mehrotra (https://github.com/anugyamehrotra), css & styling > vercel, hosting vercel | hosting on vercel -->

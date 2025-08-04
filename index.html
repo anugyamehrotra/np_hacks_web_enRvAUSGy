@@ -1,0 +1,1943 @@
+<!-- creds: hard html > @anugya_mehrotra (https://github.com/anugyamehrotra), css & styling > vercel, hosting vercel | hosting on vercel -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NP Hacks • Discover Your Love for Coding</title>
+    <link rel="icon" type="hack_club_logo.svg" href="assets/hack_club_logo.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8fafc;
+            background-image: url('./background_website_img.png');
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: 400px 400px;
+            background-position: 0 0;
+            color: #0f172a;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(5, 150, 105, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(124, 58, 237, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(248, 250, 252, 0.85);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-elements {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            top: 30%;
+            right: 10%;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+    
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+            position: relative;
+        }
+
+        .header img {
+            height: 2.5rem;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.05);
+        }
+
+        .header nav {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .header a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .header a:hover {
+            color: #059669;
+            background-color: rgba(5, 150, 105, 0.1);
+            transform: translateY(-2px);
+        }
+
+     
+        .hero-section {
+            background: linear-gradient(135deg, rgba(236, 253, 245, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(239, 246, 255, 0.9) 100%);
+            padding: 6rem 0;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 20;
+        }
+
+        .hero-content {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #d1fae5;
+            color: #065f46;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, #059669, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #059669, #2563eb);
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 64rem;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 64rem;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(135deg, #059669, #2563eb);
+            border-radius: 1.5rem;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+
+        .featured-section {
+            padding: 6rem 0;
+            background-color: transparent;
+            position: relative;
+            z-index: 20;
+            margin-top: -2rem;
+        }
+
+        .featured-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            background: transparent;
+        }
+
+        .featured-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .featured-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: transparent;
+        }
+
+        .featured-image {
+            background: transparent;
+            padding: 0;
+            position: relative;
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
+
+        .featured-image:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .featured-image img {
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+            background: transparent;
+        }
+
+        .featured-image::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            background: linear-gradient(135deg, #059669, #2563eb);
+            border-radius: 1.5rem;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .featured-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step-card {
+            background-color: rgba(248, 250, 252, 0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            border-left: 4px solid;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            z-index: -1;
+        }
+
+        .step-card:hover {
+            transform: translateX(10px) translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card.step-1 {
+            border-left-color: #059669;
+            margin-left: 0;
+        }
+
+        .step-card.step-2 {
+            border-left-color: #2563eb;
+            margin-left: 2rem;
+        }
+
+        .step-card.step-3 {
+            border-left-color: #7c3aed;
+            margin-left: 1rem;
+        }
+
+        .step-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .step-number:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .step-1 .step-number {
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .step-2 .step-number {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+        }
+
+        .step-3 .step-number {
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .step-highlight {
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+    
+        .blog-section {
+            padding: 6rem 0;
+            background-color: rgba(248, 250, 252, 0.9);
+            position: relative;
+            z-index: 15;
+        }
+
+        .blog-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .blog-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #d1fae5;
+            color: #065f46;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(15px);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            z-index: -1;
+        }
+
+        .blog-card:nth-child(1) {
+            transform: rotate(-1deg);
+            margin-top: 0;
+        }
+
+        .blog-card:nth-child(2) {
+            transform: rotate(1deg);
+            margin-top: 2rem;
+        }
+
+        .blog-card:nth-child(3) {
+            transform: rotate(-0.5deg);
+            margin-top: 1rem;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.02);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+        }
+
+        .blog-card-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .blog-card-1 .blog-card-icon {
+            background: linear-gradient(135deg, #ef4444, #f97316);
+        }
+
+        .blog-card-2 .blog-card-icon {
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+        }
+
+        .blog-card-3 .blog-card-icon {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+
+        .blog-card-icon img {
+            width: 2rem;
+            height: 2rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .blog-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card-description {
+            color: #475569;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+     
+        .events-section {
+            padding: 6rem 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 15;
+        }
+
+        .events-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .events-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .events-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .events-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .events-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            margin-bottom: 3rem;
+            perspective: 1000px;
+            border-radius: 1rem;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll 30s linear infinite;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 20rem;
+            height: 12rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .carousel-item:nth-child(odd) {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+
+        .carousel-item:nth-child(even) {
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        .carousel-item:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .carousel-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(5, 150, 105, 0.1), rgba(37, 99, 235, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-item:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-21.5rem * 10));
+            }
+        }
+
+        .events-cta {
+            text-align: center;
+        }
+
+        .events-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #059669, #2563eb);
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .events-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .events-button:hover::before {
+            left: 100%;
+        }
+
+        .events-button:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+     
+        .offers-section {
+            padding: 6rem 0;
+            background-color: rgba(248, 250, 252, 0.9);
+            position: relative;
+            z-index: 15;
+        }
+
+        .offers-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .offers-banner {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .offers-banner img {
+            width: 100%;
+            max-width: 64rem;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 2rem;
+            transition: transform 0.5s ease;
+        }
+
+        .offers-banner img:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .offers-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(55, 48, 163, 0.2);
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .offers-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .offers-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .offer-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(15px);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            z-index: -1;
+        }
+
+        .offer-card:nth-child(1) {
+            transform: translateY(0);
+        }
+
+        .offer-card:nth-child(2) {
+            transform: translateY(1rem);
+        }
+
+        .offer-card:nth-child(3) {
+            transform: translateY(0.5rem);
+        }
+
+        .offer-card:nth-child(4) {
+            transform: translateY(1.5rem);
+        }
+
+        .offer-card:nth-child(5) {
+            transform: translateY(0.75rem);
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-card-content {
+            padding: 2rem;
+        }
+
+        .offer-card-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .offer-card-icon:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .offer-card:nth-child(1) .offer-card-icon {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        }
+
+        .offer-card:nth-child(2) .offer-card-icon {
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+        }
+
+        .offer-card:nth-child(3) .offer-card-icon {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        }
+
+        .offer-card:nth-child(4) .offer-card-icon {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .offer-card:nth-child(5) .offer-card-icon {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+        }
+
+        .offer-card-icon img {
+            width: 2rem;
+            height: 2rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .offer-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+
+        .offer-card-description {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #059669, #2563eb);
+            position: relative;
+            z-index: 25;
+            transform: skewY(-2deg);
+            margin: 4rem 0;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+            transform: skewY(2deg);
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-highlight {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #059669;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(5, 150, 105, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: #f8fafc;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .faq-section {
+            padding: 6rem 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 20;
+        }
+
+        .faq-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: rgba(248, 250, 252, 0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 1.125rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #059669;
+        }
+
+        .faq-question::after {
+            content: '▼';
+            color: #059669;
+            transition: transform 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .faq-item[open] .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: #475569;
+            line-height: 1.7;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    
+        .sponsors-section {
+            padding: 6rem 0;
+            background-color: rgba(248, 250, 252, 0.9);
+            position: relative;
+            z-index: 15;
+        }
+
+        .sponsors-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .sponsors-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+
+        .sponsors-description {
+            font-size: 1.25rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .sponsors-link {
+            color: #059669;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sponsors-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #059669, #2563eb);
+            transition: width 0.3s ease;
+        }
+
+        .sponsors-link:hover::after {
+            width: 100%;
+        }
+
+
+        .footer {
+            background-color: rgba(15, 23, 42, 0.95);
+            color: white;
+            position: relative;
+            backdrop-filter: blur(15px);
+            z-index: 30;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(37, 99, 235, 0.05));
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .footer-section p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #10b981;
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: left;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom a {
+            color: #10b981;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: #34d399;
+        }
+
+     
+        @media (max-width: 768px) {
+            body {
+                background-size: 300px 300px;
+            }
+
+            .floating-circle {
+                display: none;
+            }
+
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .header nav {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .featured-title,
+            .blog-title,
+            .events-title,
+            .offers-title,
+            .cta-title,
+            .faq-title,
+            .sponsors-title {
+                font-size: 2rem;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .featured-image {
+                transform: rotate(0deg);
+                order: -1;
+            }
+
+            .step-card {
+                margin-left: 0 !important;
+            }
+
+            .blog-grid,
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card,
+            .offer-card {
+                transform: rotate(0deg) !important;
+                margin-top: 0 !important;
+            }
+
+            .carousel-item {
+                width: 16rem;
+                height: 10rem;
+                transform: perspective(1000px) rotateY(0deg) !important;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-17.5rem * 10));
+                }
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .social-media {
+                gap: 0.75rem;
+                justify-content: center;
+            }
+
+            .social-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            .social-icon svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-size: 250px 250px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .featured-title,
+            .blog-title,
+            .events-title,
+            .offers-title,
+            .cta-title,
+            .faq-title,
+            .sponsors-title {
+                font-size: 1.75rem;
+            }
+
+            .carousel-item {
+                width: 14rem;
+                height: 9rem;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-15.5rem * 10));
+                }
+            }
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #94a3b8, #64748b);
+        }
+
+        button:focus,
+        a:focus,
+        details:focus {
+            outline: 2px solid #10b981;
+            outline-offset: 2px;
+        }
+
+
+        * {
+            transition-property: transform, opacity, box-shadow, background-color, color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+   
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-track {
+                animation: none;
+            }
+
+            .floating-circle {
+                animation: none;
+            }
+
+            .hero-section::before {
+                animation: none;
+            }
+
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+
+    <header class="header">
+        <div class="header-container">
+            <div>
+                <img src="assets/hack_club_logo.svg" alt="NP Hacks Logo" onclick="location.href=' index.html'" class="logo">
+            </div>
+            <nav>
+                <a href="about_us.html">About Us</a>
+                <a href="sponsor_page.html">Sponsorships</a>
+                <a href="events_page.html">Events</a>
+                <a href="mailto:team@nphack.club">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">THE RUNDOWN</span>
+                <h1 class="hero-title">
+                    Discover <span class="hero-highlight">your love</span> for coding.
+                </h1>
+                <p class="hero-description">
+                    NP Hacks aims to <strong>create opportunities for, engage with, and inspire</strong> the new generation of
+                    technologists and problem-solvers. Your support will be critical in enabling us to host brilliant youth
+                    and allow them to <strong>challenge themselves</strong> and <strong>push their capabilities</strong>.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="assets/north_park_banner_img.png" alt="North Park Banner">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="featured-section">
+        <div class="featured-container">
+            <div class="featured-header">
+                <span class="featured-badge">THE ROADMAP</span>
+                <h2 class="featured-title">Your Journey to Coding Excellence</h2>
+            </div>
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="assets/np_hacks_map.png" alt="NP Hacks Journey Map">
+                </div>
+                <div class="featured-steps">
+                    <article class="step-card step-1">
+                        <div class="step-content">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h3 class="step-title">Connect with enthusiastic teenage coders</h3>
+                                <p class="step-description">
+                                    Have a passion for coding? Want to get started but don't know how? At
+                                    <span class="step-highlight">NP Hacks</span> you will find
+                                    instructors from all classes willing to help you on your coding journey.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="step-card step-2">
+                        <div class="step-content">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h3 class="step-title">Build unique projects</h3>
+                                <p class="step-description">
+                                    Our dedicated instructors will help you build meaningful, unique, and impactful projects that will
+                                    showcase your skills and creativity and be useful for potential career fields, internships, and
+                                    more.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="step-card step-3">
+                        <div class="step-content">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h3 class="step-title">Attend sponsored events</h3>
+                                <p class="step-description">
+                                    Gain valid, credible, and unique tech experience at our sponsored coding events to build your
+                                    portfolio and experience. Sponsored by local & nation-wide tech-companies!
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-section">
+        <div class="blog-container">
+            <div class="blog-header">
+                <span class="blog-badge">GET STARTED</span>
+                <h2 class="blog-title">
+                    Get your coding career
+                    <span class="hero-highlight">starting & growing</span>
+                    with NP Hacks.
+                </h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card blog-card-1">
+                    <div class="blog-card-content">
+                        <div class="blog-card-icon">
+                            <img src="assets/https://cdn-icons-png.flaticon.com/512/8648/8648477.png" alt="Hackathons">
+                        </div>
+                        <h3 class="blog-card-title">Hackathons</h3>
+                        <p class="blog-card-description">
+                            Join our sponsored & club-held hackathons to collaborate, innovate, and create amazing projects with
+                            fellow developers and designers.
+                        </p>
+                    </div>
+                </article>
+                <article class="blog-card blog-card-2">
+                    <div class="blog-card-content">
+                        <div class="blog-card-icon">
+                            <img src="assets/https://cdn-icons-png.flaticon.com/512/5421/5421243.png" alt="Workshops">
+                        </div>
+                        <h3 class="blog-card-title">Workshops</h3>
+                        <p class="blog-card-description">
+                            Participate in hands-on workshops & projects to enhance your skills and learn from industry experts and
+                            experienced mentors.
+                        </p>
+                    </div>
+                </article>
+                <article class="blog-card blog-card-3">
+                    <div class="blog-card-content">
+                        <div class="blog-card-icon">
+                            <img src="assets/https://cdn-icons-png.flaticon.com/512/8192/8192290.png" alt="Mentorship">
+                        </div>
+                        <h3 class="blog-card-title">Mentorship</h3>
+                        <p class="blog-card-description">
+                            Get personalized guidance from experienced mentors to help accelerate your coding journey and career
+                            growth.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="events-section">
+        <div class="events-container">
+            <div class="events-header">
+                <span class="events-badge">UPCOMING EVENTS</span>
+                <h2 class="events-title">
+                    Join NP Hacks at our upcoming
+                    <span class="hero-highlight">events!</span>
+                </h2>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample1.png" alt="Event 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample2.png" alt="Event 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample3.png" alt="Event 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample4.png" alt="Event 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample5.png" alt="Event 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample6.png" alt="Event 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample7.png" alt="Event 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample8.png" alt="Event 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample9.png" alt="Event 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample10.png" alt="Event 10">
+                    </div>
+                 
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample1.png" alt="Event 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample2.png" alt="Event 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample3.png" alt="Event 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample4.png" alt="Event 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample5.png" alt="Event 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample6.png" alt="Event 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample7.png" alt="Event 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample8.png" alt="Event 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample9.png" alt="Event 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/carousel_event_card_sample10.png" alt="Event 10">
+                    </div>
+                </div>
+            </div>
+            <div class="events-cta">
+                <a href="https://butternut-barber-a26.notion.site/NP-Hacks-Calendar-24173103b8fc809b9a77e2f13425b511"
+                    target="_blank" rel="noopener noreferrer" class="events-button">
+                    📅 View Full NP Hacks Calendar
+                    <span>↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="offers-section">
+        <div class="offers-container">
+            <div class="offers-banner">
+                <img src="assets/north_park_offers_banner.png" alt="What We Offer Banner"><br>
+                <span class="offers-badge">WHAT WE OFFER</span>
+                <h2 class="offers-title">
+                    Check out what
+                    <span class="hero-highlight">NP Hacks</span>
+                    offers.
+                </h2>
+            </div>
+            <div class="offers-grid">
+                <article class="offer-card">
+                    <div class="offer-card-content">
+                        <div class="offer-card-icon">
+                            <img src="assets/https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/brain.svg" alt="AI/ML">
+                        </div>
+                        <h3 class="offer-card-title">AI/ML</h3>
+                        <p class="offer-card-description">
+                            Dive deep into artificial intelligence and machine learning technologies and learn the deep, unique science behind cutting-edge AI/ML projects.
+                        </p>
+                    </div>
+                </article>
+                <article class="offer-card">
+                    <div class="offer-card-content">
+                        <div class="offer-card-icon">
+                            <img src="assets/https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/code.svg" alt="Web Development">
+                        </div>
+                        <h3 class="offer-card-title">Web Development</h3>
+                        <p class="offer-card-description">
+                            Learn to create stunning and unique websites and learn how to build a personal portfolio. Dive deep into how to market your skills to the world.
+                        </p>
+                    </div>
+                </article>
+                <article class="offer-card">
+                    <div class="offer-card-content">
+                        <div class="offer-card-icon">
+                            <img src="assets/https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/cpu.svg" alt="Hardware/IoT">
+                        </div>
+                        <h3 class="offer-card-title">Hardware/IoT</h3>
+                        <p class="offer-card-description">
+                            Build hardware devices, explore sensing, learn how to connect devices, and more.
+                        </p>
+                    </div>
+                </article>
+                <article class="offer-card">
+                    <div class="offer-card-content">
+                        <div class="offer-card-icon">
+                            <img src="assets/https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/network.svg" alt="Blockchain">
+                        </div>
+                        <h3 class="offer-card-title">Blockchain</h3>
+                        <p class="offer-card-description">
+                            Learn and discover popular cryptocurrencies. Dive deep into how Blockchain works and operates as a decentralized distributed database to improve business processes
+                        </p>
+                    </div>
+                </article>
+                <article class="offer-card">
+                    <div class="offer-card-content">
+                        <div class="offer-card-icon">
+                            <img src="assets/https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/gamepad-2.svg" alt="Game Development">
+                        </div>
+                        <h3 class="offer-card-title">Game Development</h3>
+                        <p class="offer-card-description">
+                            Create engaging and fun games using popular game engines like Unity and learn how to program and deploy them.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cta-section">
+        <div class="cta-container">
+            <span class="cta-badge">NEXT STEPS</span>
+            <h2 class="cta-title">
+                Apply today to <span class="cta-highlight">start your coding journey</span>.
+            </h2>
+            <p class="cta-description">We are here for you every step of the way!</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1e6OhMRigiYAK6FSwPdBJyM2Tr0GX-erHq1rzDfYtoQNNQw/viewform"
+                target="_blank" rel="noopener noreferrer" class="cta-button">
+                Apply Now
+            </a>
+        </div>
+    </section>
+
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">How does NP Hacks Operate?</summary>
+                    <p class="faq-answer">
+                        Every [date], as per your desired learning choice/course that you choose, we will host a meeting at [location] where you will learn about the topic of your choice. Every week, we will host sessions, followed with weekly coding projects & development, bi-weekly sponsored/non-sponsored hackathons, and monthly sponsored hackathons & events (these are the big ones!). We will also provide you with resources and materials to help you learn and grow in your coding journey.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What will I learn at NP Hacks?</summary>
+                    <p class="faq-answer">
+                        Depending on your course level/experience, we will teach you how to explore different coding languages, recognize patterns, solve problems, and develop logical reasoning & processing skills. These skills will be key for your understanding of code and will be useful for preperation for coding-related events. Furthermore, we will teach you how to build projects, develop your own ideas, and create unique solutions to problems. We will be present to help you at every step of the way!
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">How will I use what NP Hacks teaches me in the real world?</summary>
+                    <p class="faq-answer">
+                        Experience & projects are major aspects that define who you are to a potential employer, individual, or organization in the IT field. At NP Hacks, we will teach you how to create meaningful and impactful projects that are eye-catching and how to market and sell these projects on your portfolios, resumes, etc.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">Will I be able to land a job?</summary>
+                    <p class="faq-answer">
+                        NP Hacks does not promise you a career/job/internship during/fresh out of highschool. However, as the CS field becomes more and more competitive, experience is what will make you stand out. Using your learnt skills and projects, we will help you find potential places that are hiring and teach you how to apply for these internships (ranging from start-ups to big-tech companies!). We will also help you prepare for interviews and provide you with resources to help you succeed in your job search.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">How do I apply to NP Hacks?</summary>
+                    <p class="faq-answer">
+                        At the beginning of every school year (in fall), following our club introduction sessions, you can find applications posted on our socials, on this website, or in the school's morning announcements website. This application will <strong>NOT contain any coding questions</strong>. You will be required to fill out a form to let us know of your desired choice of program/course, grade, etc. If you are interested in an executive position, all applications for execs. will be posted at the end of each school year. <strong>This will require STRONG coding experience, skills & knowledge.</strong>
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">I have another question!</summary>
+                    <p class="faq-answer">
+                        Please email us at team@nphack.club if you have any additional questions! We look forward to hearing from you.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="sponsors-section">
+        <div class="sponsors-container">
+            <h2 class="sponsors-title">Sponsors</h2>
+            <p class="sponsors-description">
+                Interested in sponsoring NPHacks 2025? Read through our sponsorship package for more information! For any
+                further inquiries, feel free to contact us at
+                <a href="mailto:team@nphack.club" class="sponsors-link">team@nphack.club</a>.
+            </p>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NP Hacks</h3>
+                    <p>
+                        We are committed to giving you the best possible coding experience. Join us to discover your joy for
+                        programming and learn the key important concepts to succeed.<br><br>
+                        Contact: team@nphack.club
+                    </p>
+
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/npss.hackclub/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/NPHackClub" target="_blank" rel="noopener noreferrer" class="social-icon github" aria-label="Follow us on GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:team@nphack.club" class="social-icon gmail" aria-label="Email us">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.273L12 10.91l10.091-7.09h.273c.904 0 1.636.732 1.636 1.636z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="events_page.html">Events</a></li>
+                        <li><a href="sponsors.html">Sponsorships</a></li>
+                        <li><a href="mailto:team@nphack.club">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="sponsorship-package.html">Sponsorship Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc1e6OhMRigiYAK6FSwPdBJyM2Tr0GX-erHq1rzDfYtoQNNQw/viewform">Apply Now</a></li>
+                        <li><a href="mailto:team@nphack.club">Partner With Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    Made with ❤️ by North Park Hack Club. Inspired by
+                    <a href="https://hackclub.com" target="_blank">Hack Club</a>.
+                </p>
+                <p>© 2025 NP Hacks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- creds: hard html > @anugya_mehrotra (https://github.com/anugyamehrotra), css & styling > vercel, hosting vercel | hosting on vercel -->
