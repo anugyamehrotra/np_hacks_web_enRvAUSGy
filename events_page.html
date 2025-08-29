@@ -395,9 +395,6 @@
             animation: scroll-events 35s linear infinite;
         }
 
-        .carousel-events-track:hover {
-            animation-play-state: paused;
-        }
 
         .carousel-events-item {
             flex-shrink: 0;
@@ -430,10 +427,6 @@
             transform: perspective(1000px) rotateY(-5deg);
         }
 
-        .carousel-events-item:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.05) translateY(-5px);
-        }
-
         .carousel-events-item img {
             width: 100%;
             height: 100%;
@@ -441,9 +434,7 @@
             transition: transform 0.3s ease;
         }
 
-        .carousel-events-item:hover img {
-            transform: scale(1.1);
-        }
+
 
         @keyframes scroll-events {
             0% {
@@ -1029,7 +1020,7 @@
             background: linear-gradient(135deg, #94a3b8, #64748b);
         }
 
-        
+      
         button:focus,
         a:focus {
             outline: 2px solid #10b981;
@@ -1078,7 +1069,7 @@
     <div class="header">
         <div class="header-container">
             <div>
-                <img src="assets/hack_club_logo.svg" alt="NP Hacks Logo" onclick="location.href=' index.html'" class="logo">
+                <img src="assets/hack_club_logo.svg" alt="NP Hacks Logo" onclick="location.href='index.html'" class="logo">
             </div>
             <nav>
                 <a href="about_us.html">About Us</a>
@@ -1129,7 +1120,7 @@
                         <img src="assets/carousel_event_card_sample3.png" alt="Event 3">
                     </div>
                     <div class="carousel-events-item">
-                        <img src="assets/carousel_event_card_sample4.png" alt="Event 4">
+                        <img src="assets/carousel_event_card_sample44.jpg" alt="Event 4">
                     </div>
                     <div class="carousel-events-item">
                         <img src="assets/carousel_event_card_sample5.png" alt="Event 5">
@@ -1149,8 +1140,11 @@
                     <div class="carousel-events-item">
                         <img src="assets/carousel_event_card_sample10.png" alt="Event 10">
                     </div>
-                   
                     <div class="carousel-events-item">
+                        <img src="assets/carousel_event_card_sample111.jpg" alt="Event 11">
+                    </div>
+                   
+                   <div class="carousel-events-item">
                         <img src="assets/carousel_event_card_sample1.png" alt="Event 1">
                     </div>
                     <div class="carousel-events-item">
@@ -1160,7 +1154,7 @@
                         <img src="assets/carousel_event_card_sample3.png" alt="Event 3">
                     </div>
                     <div class="carousel-events-item">
-                        <img src="assets/carousel_event_card_sample4.png" alt="Event 4">
+                        <img src="assets/carousel_event_card_sample44.jpg" alt="Event 4">
                     </div>
                     <div class="carousel-events-item">
                         <img src="assets/carousel_event_card_sample5.png" alt="Event 5">
@@ -1180,10 +1174,13 @@
                     <div class="carousel-events-item">
                         <img src="assets/carousel_event_card_sample10.png" alt="Event 10">
                     </div>
+                    <div class="carousel-events-item">
+                        <img src="assets/carousel_event_card_sample111.jpg" alt="Event 11">
+                    </div>
                 </div>
             </div>
             
-            <a class="button_text_calendar_redir" href="https://butternut-barber-a26.notion.site/NP-Hacks-Calendar-24173103b8fc809b9a77e2f13425b511" target="_blank" rel="noopener noreferrer">
+            <a class="button_text_calendar_redir" href="https://butternut-barber-a26.notion.site/NP-Hacks-Event-Schedule-25273103b8fc80fb86c0f56feda05c99?pvs=74" target="_blank" rel="noopener noreferrer">
                 📅 View Full NP Hacks Calendar
                 <span>↗</span>
             </a>
@@ -1193,7 +1190,11 @@
             <span class="css-our_sponsors">OUR COMMUNITY</span>
             <h1 class="css-sponsors_main_title">Our Sponsors</h1>
             <div class="sponsor_card_container">
-                <div class="sponsor_card">
+                <div class="no_sponsors_container" style="opacity: 0.5; width: 100%; max-width: 800px; margin: 0 auto; padding: 20px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
+                    <img src="assets/no_sponsors_template_.png" alt="Please join us!" class="no_sponsors" style="max-width: 100%; height: auto; display: block;">
+                </div>
+                <!-- potential sponsor card templates here-->
+                <!-- <div class="sponsor_card">
                     <img src="assets/sponsorship_card_hsbc_1.png" alt="HSBC Sponsor" class="sponsor_image">
                 </div>
                 <div class="sponsor_card">
@@ -1204,7 +1205,7 @@
                 </div>
                 <div class="sponsor_card">
                     <img src="assets/sponsorship_card_HC_4.png" alt="Hack Club Sponsor" class="sponsor_image">
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -1229,10 +1230,10 @@
                     <h3>NP Hacks</h3>
                     <p>
                         We are committed to giving you the best possible coding experience. Join us to discover your joy for
-                        programming and learn the key important concepts to succeed. <br><br>
+                        programming and learn the key important concepts to succeed.<br><br>
                         Contact: team@nphack.club
                     </p>
-                
+
                     <div class="social-media">
                         <a href="https://www.instagram.com/npss.hackclub/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Follow us on Instagram">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1244,7 +1245,7 @@
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
-                        <a href="mailto:https://mail.google.com/mail/?view=cm&fs=1&to=team@nphack.club&su=NP%20Hacks%20-%20Query:%20&body=&bcc=someone.else@example.com" class="social-icon gmail" aria-label="Email us">
+                        <a href="mailto:team@nphack.club" class="social-icon gmail" aria-label="Email us">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.273L12 10.91l10.091-7.09h.273c.904 0 1.636.732 1.636 1.636z"/>
                             </svg>
@@ -1256,14 +1257,14 @@
                     <ul class="footer-links">
                         <li><a href="about_us.html">About Us</a></li>
                         <li><a href="events_page.html">Events</a></li>
-                        <li><a href="sponsors.html">Sponsorships</a></li>
-                        <li><a href="contact_us.html">Contact Us</a></li>
+                        <li><a href="sponsor_page.html">Sponsorships</a></li>
+                        <li><a href="mailto:team@nphack.club">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="sponsorship-package.html">Sponsorship Package</a></li>
+                        <li><a href="assets/NPHACKS_SPONSORSHIP_PROSPECTUS.pdf">Sponsorship Package</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
